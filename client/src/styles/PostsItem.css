@@ -1,0 +1,42 @@
+.postsItem__content {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+.post-card {
+  background: rgb(236, 236, 236);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+}
+.post-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+.post-description {
+  color: #4a5568;
+  font-size: 20px;
+}
+.post-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.post-id {
+  color: #718096;
+  font-size: 18px;
+}
+.post__box{
+  display: flex;
+  gap: 10px;
+}
+.post-butt{
+  padding: 8px;
+  background: #3079c7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
