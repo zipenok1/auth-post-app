@@ -13,21 +13,20 @@ function Posts() {
       const postsData = await Api.posts.getPosts()
       setPosts(postsData)
     } catch(e){
-      console.log('ошибка получения постов', e)
+      console.log('ошибка добовления поста', e)
     }
   }
 
   const submit = async (e) => {
     e.preventDefault()
     try{
-      const response = await Api.posts.postPosts({title, description})
-      console.log(response)
+      await Api.posts.postPosts({title, description})
 
       setTitle('') 
       setDescription('')
       await getAllPosts()
     } catch(error){
-      console.error('ошибка при обновлении:', error)
+      console.error('ошибка при добавлении:', error)
     }
   }
 
@@ -60,12 +59,16 @@ function Posts() {
           </button>
         </form>
       </div>
-      {posts.map((el) =>
-        <div key={el.id_posts}>
-          <PostsItem 
-            posts={el}
-          />
+      {posts.length === 0 ? (
+        <div className='posts__content-none'>
+          постов нет
         </div>
+      ) : (
+        posts.map((el) => (
+          <div key={el.id_posts}>
+            <PostsItem posts={el} />
+          </div>
+        ))
       )}
     </div>
   )

@@ -18,11 +18,9 @@ function Modal({ id, posts, isOpen, onClose }) {
         e.preventDefault()
         try{
             if (isOpen.isApi) {
-                const response = await Api.posts.updatePosts(id, { title, description })
-                console.log(response)
+                await Api.posts.updatePosts(id, { title, description })
             } else {
-                const response = await Api.posts.deletePosts(id)
-                console.log(response)
+                await Api.posts.deletePosts(id)
             }
             window.location.reload()
         } catch(error){
@@ -59,7 +57,7 @@ function Modal({ id, posts, isOpen, onClose }) {
                     </form>
                 ) : (
                     <div className='modal__delete'>
-                        <p>Вы действительно хотите удалить пост?</p>
+                        <p>вы действительно хотите удалить пост?</p>
                             <div className='modal__delete-btm'>
                                 <button onClick={onClose}>
                                     Отмена
