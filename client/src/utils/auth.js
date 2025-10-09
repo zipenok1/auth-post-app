@@ -1,16 +1,15 @@
 export const checkAuth = () => {
-  return !!localStorage.getItem('token')
-}
+  return !!localStorage.getItem('token');
+};
 
 export const getToken = () => {
-  return localStorage.getItem('token')
-}
+  return localStorage.getItem('token');
+};
 
 export const login = (token) => {
-  localStorage.setItem('token', token)
-}
+  localStorage.setItem('token', token);
+};
 
 export const logout = () => {
-  localStorage.removeItem('token')
-}
-
+  localStorage.removeItem('token');
+};
